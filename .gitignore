@@ -1,0 +1,9 @@
+build/bin/x86_64-linux/
+build/temp/x86_64/
+debian/files
+debian/libsnap7-dev.debhelper.log
+debian/libsnap7-dev.substvars
+debian/libsnap7-dev/
+debian/libsnap71.debhelper.log
+debian/libsnap71.substvars
+debian/libsnap71/
