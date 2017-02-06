@@ -1,7 +1,7 @@
 object FormClient: TFormClient
-  Left = 245
+  Left = 455
   Height = 664
-  Top = 50
+  Top = 105
   Width = 753
   BorderIcons = [biSystemMenu, biMinimize, biMaximize, biHelp]
   Caption = 'FormClient'
@@ -80,7 +80,7 @@ object FormClient: TFormClient
     Height = 531
     Top = 110
     Width = 753
-    ActivePage = TabSheet3
+    ActivePage = TabSheet6
     Align = alBottom
     Anchors = [akTop, akBottom]
     Font.Color = clWindowText
@@ -88,14 +88,14 @@ object FormClient: TFormClient
     Font.Name = 'Sans'
     MultiLine = True
     ParentFont = False
-    TabIndex = 2
+    TabIndex = 0
     TabOrder = 4
     OnChange = PageControlChange
     Options = [nboMultiLine]
     object TabSheet6: TTabSheet
       Caption = 'System Info'
-      ClientHeight = 501
-      ClientWidth = 747
+      ClientHeight = 504
+      ClientWidth = 745
       ImageIndex = 9
       object GroupBox5: TGroupBox
         Left = 17
@@ -108,33 +108,33 @@ object FormClient: TFormClient
         TabOrder = 2
         object Label44: TLabel
           Left = 10
-          Height = 15
+          Height = 14
           Top = 13
-          Width = 99
+          Width = 98
           Caption = 'Max PDU size (byte)'
           ParentColor = False
         end
         object Label45: TLabel
           Left = 10
-          Height = 15
+          Height = 14
           Top = 45
-          Width = 115
+          Width = 114
           Caption = 'Max active connections'
           ParentColor = False
         end
         object Label46: TLabel
           Left = 10
-          Height = 15
+          Height = 14
           Top = 77
-          Width = 91
+          Width = 90
           Caption = 'Max MPI rate (bps)'
           ParentColor = False
         end
         object Label47: TLabel
           Left = 10
-          Height = 15
+          Height = 14
           Top = 109
-          Width = 128
+          Width = 127
           Caption = 'Max comm. bus rare (bps)'
           ParentColor = False
         end
@@ -206,41 +206,41 @@ object FormClient: TFormClient
         TabOrder = 1
         object Label41: TLabel
           Left = 10
-          Height = 15
+          Height = 14
           Top = 13
-          Width = 91
+          Width = 90
           Caption = 'Module Type Name'
           ParentColor = False
         end
         object Label42: TLabel
           Left = 10
-          Height = 15
+          Height = 14
           Top = 45
-          Width = 67
+          Width = 66
           Caption = 'Serial number'
           ParentColor = False
         end
         object Label43: TLabel
           Left = 10
-          Height = 15
+          Height = 14
           Top = 77
-          Width = 84
+          Width = 83
           Caption = 'Vendor copyright'
           ParentColor = False
         end
         object Label51: TLabel
           Left = 10
-          Height = 15
+          Height = 14
           Top = 109
-          Width = 46
+          Width = 45
           Caption = 'AS Name'
           ParentColor = False
         end
         object Label52: TLabel
           Left = 10
-          Height = 15
+          Height = 14
           Top = 141
-          Width = 65
+          Width = 64
           Caption = 'Module Name'
           ParentColor = False
         end
@@ -326,17 +326,17 @@ object FormClient: TFormClient
         TabOrder = 0
         object Label40: TLabel
           Left = 10
-          Height = 15
+          Height = 14
           Top = 13
-          Width = 56
+          Width = 55
           Caption = 'Order code'
           ParentColor = False
         end
         object Label36: TLabel
           Left = 330
-          Height = 15
+          Height = 14
           Top = 13
-          Width = 38
+          Width = 37
           Caption = 'Version'
           ParentColor = False
         end
@@ -375,9 +375,9 @@ object FormClient: TFormClient
       end
       object Label65: TLabel
         Left = 18
-        Height = 29
+        Height = 28
         Top = 467
-        Width = 614
+        Width = 613
         Alignment = taCenter
         Caption = 'If TSAP Tab is used for the connection, The system Info is not called automatically (you should press the button "Refresh Info").'#13#10'This because some PLC (S7200/LOGO) don''t offer these informations.'
         ParentColor = False
@@ -2627,6 +2627,16 @@ object FormClient: TFormClient
     ParentColor = False
     ParentFont = False
     OnClick = Label64Click
+  end
+  object CBPing: TCheckBox
+    Left = 567
+    Height = 19
+    Top = 26
+    Width = 81
+    Caption = 'Ping enabled'
+    Checked = True
+    State = cbChecked
+    TabOrder = 8
   end
   object TimClock: TTimer
     Enabled = False

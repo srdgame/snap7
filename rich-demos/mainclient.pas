@@ -27,6 +27,7 @@ type
 
   TFormClient = class(TForm)
     CBConnType: TComboBox;
+    CBPing: TCheckBox;
     EdIp: TEdit;
     BtnConnect: TButton;
     EdLocTsapHI: TEdit;
@@ -986,6 +987,7 @@ Var
   RemoteTsapLO : integer;
   LocalTsap    : word;
   RemoteTsap   : word;
+  PingTime     : integer;
 
   function GetChar(ED : TEdit) : integer;
   Var
@@ -999,6 +1001,16 @@ Var
 begin
   LastOP:='Connection';
   RemoteAddress:=AnsiString(EdIp.Text);
+
+  if not CBPing.Checked then
+  begin
+    PingTime:=0;
+    LastError:=Client.SetParam(p_i32_PingTimeout,@PingTime);
+    if LastError<>0 then
+      exit;
+  end;
+
+
   if PCC.PageIndex=0 then
   begin
     ConnType:=CBConnType.ItemIndex+1;
@@ -1488,8 +1500,9 @@ begin
      ThePlatform:='Windows platform';
   {$ELSE}
      ThePlatform:='Unix platform';
+     CBPing.Visible:=false;
   {$ENDIF}
-  Caption:='Snap7 Client Demo - '+ThePlatform+Wide+
+     Caption:='Snap7 Client Demo - '+ThePlatform+Wide+
   {$IFDEF FPC}
     ' [Lazarus]';
   {$ELSE}

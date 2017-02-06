@@ -136,7 +136,7 @@ namespace Snap7
         #region Get/Set 16 bit signed value (S7 int) -32768..32767
         public static int GetIntAt(byte[] Buffer, int Pos)
         {
-            return (int)((Buffer[Pos] << 8) | Buffer[Pos + 1]);
+            return (short)((Buffer[Pos] << 8) | Buffer[Pos + 1]);
         }
         public static void SetIntAt(byte[] Buffer, int Pos, Int16 Value)
         {
