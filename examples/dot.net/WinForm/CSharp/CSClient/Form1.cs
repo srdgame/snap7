@@ -20,7 +20,7 @@ namespace CSClient
         private void ShowResult(int Result)
         {
             // This function returns a textual explaination of the error code
-            TextError.Text = Client.ErrorText(Result);
+            TextError.Text = Client.ErrorText(Result) + " (" + Client.ExecTime().ToString() + " ms)";
         }
 
         public MainForm()
@@ -356,6 +356,34 @@ namespace CSClient
             S7.SetLTODAt(Buffer, 86, DT);
             S7.SetLDTAt(Buffer, 94, DT);
             PlcDBWrite();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            DateTime DT = new DateTime() ;
+            if (Client.GetPlcDateTime(ref DT)==0)
+            {
+                label15.Text = DT.ToLongDateString()+" - "+DT.ToLongTimeString();            
+            }
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            ushort[] Buffer = new ushort[4];
+            int Result;
+            Result = Client.CTRead(77, 4, Buffer);
+            label17.Text = "C77 = " + S7.GetCounterAt(Buffer,0).ToString();
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+
+            byte[] rset = new byte[1];
+            rset[0] = 0;
+            int Result = Client.WriteArea(S7Client.S7AreaDB, 1, 0, 1, S7Client.S7WLBit, rset);
+            ShowResult(Result);
+            //            ushort Counter =0;
+            label18.Text = S7.ToCounter(475).ToString();
         }
 
     }

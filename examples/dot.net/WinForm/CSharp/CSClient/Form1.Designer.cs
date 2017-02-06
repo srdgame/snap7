@@ -58,6 +58,12 @@
             this.label16 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.label15 = new System.Windows.Forms.Label();
+            this.button3 = new System.Windows.Forms.Button();
+            this.label17 = new System.Windows.Forms.Label();
+            this.button4 = new System.Windows.Forms.Button();
+            this.label18 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // Label11
@@ -213,7 +219,7 @@
             this.TxtSlot.Name = "TxtSlot";
             this.TxtSlot.Size = new System.Drawing.Size(44, 20);
             this.TxtSlot.TabIndex = 25;
-            this.TxtSlot.Text = "0";
+            this.TxtSlot.Text = "2";
             // 
             // Label2
             // 
@@ -247,7 +253,7 @@
             this.TxtIP.Name = "TxtIP";
             this.TxtIP.Size = new System.Drawing.Size(100, 20);
             this.TxtIP.TabIndex = 22;
-            this.TxtIP.Text = "192.168.0.72";
+            this.TxtIP.Text = "192.168.10.110";
             // 
             // TextError
             // 
@@ -374,11 +380,74 @@
             this.button1.Visible = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(295, 67);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(100, 23);
+            this.button2.TabIndex = 53;
+            this.button2.Text = "GetPlcDateTime";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Location = new System.Drawing.Point(411, 72);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(41, 13);
+            this.label15.TabIndex = 54;
+            this.label15.Text = "label15";
+            // 
+            // button3
+            // 
+            this.button3.Location = new System.Drawing.Point(320, 103);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(75, 23);
+            this.button3.TabIndex = 55;
+            this.button3.Text = "button3";
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Location = new System.Drawing.Point(411, 108);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(41, 13);
+            this.label17.TabIndex = 56;
+            this.label17.Text = "label17";
+            // 
+            // button4
+            // 
+            this.button4.Location = new System.Drawing.Point(486, 67);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(75, 23);
+            this.button4.TabIndex = 57;
+            this.button4.Text = "button4";
+            this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Location = new System.Drawing.Point(486, 103);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(41, 13);
+            this.label18.TabIndex = 58;
+            this.label18.Text = "label18";
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(605, 583);
+            this.Controls.Add(this.label18);
+            this.Controls.Add(this.button4);
+            this.Controls.Add(this.label17);
+            this.Controls.Add(this.button3);
+            this.Controls.Add(this.label15);
+            this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.label14);
             this.Controls.Add(this.label16);
@@ -410,7 +479,7 @@
             this.Controls.Add(this.TxtIP);
             this.Controls.Add(this.TextError);
             this.MaximumSize = new System.Drawing.Size(621, 99999);
-            this.MinimumSize = new System.Drawing.Size(621, 0);
+            this.MinimumSize = new System.Drawing.Size(621, 38);
             this.Name = "MainForm";
             this.Text = "C# Simple Demo";
             this.ResumeLayout(false);
@@ -450,6 +519,12 @@
         internal System.Windows.Forms.Label label16;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Label label17;
+        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Label label18;
     }
 }
 

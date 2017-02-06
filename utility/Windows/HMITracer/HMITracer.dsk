@@ -26,7 +26,7 @@ EditWindowCount=1
 [C:\Test\listview\frmMain.pas]
 ModuleType=TSourceModule
 FormState=1
-FormOnTop=0
+FormOnTop=1
 
 [C:\Test\listview\frmReport.pas]
 ModuleType=TSourceModule

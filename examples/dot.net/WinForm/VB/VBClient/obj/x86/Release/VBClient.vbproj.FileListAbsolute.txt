@@ -33,3 +33,14 @@ C:\Snap7\Deploy-1.4.0\examples\dot.net\WinForm\VB\VBClient\obj\x86\Release\VBCli
 C:\Snap7\Deploy-1.4.0\examples\dot.net\WinForm\VB\VBClient\obj\x86\Release\VBClient.Resources.resources
 C:\Snap7\Deploy-1.4.0\examples\dot.net\WinForm\VB\VBClient\obj\x86\Release\VBClient.vbproj.GenerateResource.Cache
 C:\Snap7\Deploy-1.4.0\examples\dot.net\WinForm\VB\VBClient\obj\x86\Release\VBClient.pdb
+C:\Snap7\Deploy-1.4.1\snap7-full-1.4.1\examples\dot.net\WinForm\VB\VBClient\obj\x86\Release\VBClient.exe
+C:\Snap7\Deploy-1.4.1\snap7-full-1.4.1\examples\dot.net\WinForm\VB\VBClient\obj\x86\Release\VBClient.xml
+C:\Snap7\Deploy-1.4.1\snap7-full-1.4.1\examples\dot.net\WinForm\VB\VBClient\bin\x86\VBClient.exe
+C:\Snap7\Deploy-1.4.1\snap7-full-1.4.1\examples\dot.net\WinForm\VB\VBClient\bin\x86\VBClient.pdb
+C:\Snap7\Deploy-1.4.1\snap7-full-1.4.1\examples\dot.net\WinForm\VB\VBClient\bin\x86\VBClient.xml
+C:\Snap7\Deploy-1.4.1\snap7-full-1.4.1\examples\dot.net\WinForm\VB\VBClient\bin\x86\snap7.net.dll
+C:\Snap7\Deploy-1.4.1\snap7-full-1.4.1\examples\dot.net\WinForm\VB\VBClient\obj\x86\Release\VBClient.vbprojResolveAssemblyReference.cache
+C:\Snap7\Deploy-1.4.1\snap7-full-1.4.1\examples\dot.net\WinForm\VB\VBClient\obj\x86\Release\VBClient.MainForm.resources
+C:\Snap7\Deploy-1.4.1\snap7-full-1.4.1\examples\dot.net\WinForm\VB\VBClient\obj\x86\Release\VBClient.Resources.resources
+C:\Snap7\Deploy-1.4.1\snap7-full-1.4.1\examples\dot.net\WinForm\VB\VBClient\obj\x86\Release\VBClient.vbproj.GenerateResource.Cache
+C:\Snap7\Deploy-1.4.1\snap7-full-1.4.1\examples\dot.net\WinForm\VB\VBClient\obj\x86\Release\VBClient.pdb

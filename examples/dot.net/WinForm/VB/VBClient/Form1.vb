@@ -31,6 +31,7 @@ Public Class MainForm
         Dim Result As Integer
         Dim Rack As Integer = System.Convert.ToInt32(TxtRack.Text)
         Dim Slot As Integer = System.Convert.ToInt32(TxtSlot.Text)
+
         Result = Client.ConnectTo(TxtIP.Text, Rack, Slot)
         ShowResult(Result)
         If Result = 0 Then

@@ -1,4 +1,4 @@
-Snap7 Package 1.4.0 (See History.txt for details)
+Snap7 Package 1.4.2 (See History.txt for details)
 
 The files deployed differs only for their compression method, their content is the same.
 
@@ -21,12 +21,12 @@ As you can see in the online documentation, Snap7 was succesfully built and test
 
 - Raspberry PI     (ARM V6)
 - Raspberry PI 2   (ARM V7)
+- Raspberry PI 3   (ARM V7)
 - pcDuino          (ARM V7)
 - BeagleBone Black (ARM V7)
 - CubieBoard 2     (ARM V7)
 - UDOO Quad        (ARM V7)
 
-The libsnap7.so that you will find, one for each of these boards, was not cross-compiled but built directly inside them.
 
 I'm pretty sure that the libraries deployed can run in other same-class linux boards if they are "standard Linux" based, and very sure that the libraries can be succesfully built in the others using the correct makefile (V6 or V7).
 

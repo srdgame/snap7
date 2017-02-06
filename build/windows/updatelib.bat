@@ -12,7 +12,7 @@ copy/y ..\bin\win32\snap7.dll ..\..\LabVIEW\lib\win32
 
 copy/y ..\bin\win64\snap7.lib ..\..\release\windows\win64
 copy/y ..\bin\win64\snap7.dll ..\..\release\windows\win64
-rem copy/y ..\bin\win64\snap7.dll ..\..\examples\cpp\win64
+copy/y ..\bin\win64\snap7.dll ..\..\examples\cpp\win64
 copy/y ..\bin\win64\snap7.dll ..\..\examples\plain-c\win64
 copy/y ..\bin\win64\snap7.dll ..\..\examples\pascal\win64
 copy/y ..\bin\win32\snap7.dll ..\..\examples\dot.net\WinConsole\Bin\x64
