@@ -94,6 +94,10 @@ public:
     int AsTMWrite(int Start, int Amount, void * pUsrData);
     int AsCTRead(int Start, int Amount, void * pUsrData);
     int AsCTWrite(int Start, int Amount, void * pUsrData);
+    int AsTM2Read(int Start, int Amount, void * pUsrData);
+    int AsTM2Write(int Start, int Amount, void * pUsrData);
+    int AsCT2Read(int Start, int Amount, void * pUsrData);
+    int AsCT2Write(int Start, int Amount, void * pUsrData);
     int AsDBGet(int DBNumber,  void * pUsrData,   int & Size);
     int AsDBFill(int DBNumber,  int FillChar);
 };
