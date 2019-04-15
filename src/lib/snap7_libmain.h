@@ -68,6 +68,10 @@ EXPORTSPEC int S7API Cli_TMRead(S7Object Client, int Start, int Amount, void *pU
 EXPORTSPEC int S7API Cli_TMWrite(S7Object Client, int Start, int Amount, void *pUsrData);
 EXPORTSPEC int S7API Cli_CTRead(S7Object Client, int Start, int Amount, void *pUsrData);
 EXPORTSPEC int S7API Cli_CTWrite(S7Object Client, int Start, int Amount, void *pUsrData);
+EXPORTSPEC int S7API Cli_TM2Read(S7Object Client, int Start, int Amount, void *pUsrData);
+EXPORTSPEC int S7API Cli_TM2Write(S7Object Client, int Start, int Amount, void *pUsrData);
+EXPORTSPEC int S7API Cli_CT2Read(S7Object Client, int Start, int Amount, void *pUsrData);
+EXPORTSPEC int S7API Cli_CT2Write(S7Object Client, int Start, int Amount, void *pUsrData);
 // Directory functions
 EXPORTSPEC int S7API Cli_ListBlocks(S7Object Client, TS7BlocksList *pUsrData);
 EXPORTSPEC int S7API Cli_GetAgBlockInfo(S7Object Client, int BlockType, int BlockNum, TS7BlockInfo *pUsrData);
@@ -126,6 +130,10 @@ EXPORTSPEC int S7API Cli_AsTMRead(S7Object Client, int Start, int Amount, void *
 EXPORTSPEC int S7API Cli_AsTMWrite(S7Object Client, int Start, int Amount, void *pUsrData);
 EXPORTSPEC int S7API Cli_AsCTRead(S7Object Client, int Start, int Amount, void *pUsrData);
 EXPORTSPEC int S7API Cli_AsCTWrite(S7Object Client, int Start, int Amount, void *pUsrData);
+EXPORTSPEC int S7API Cli_AsTM2Read(S7Object Client, int Start, int Amount, void *pUsrData);
+EXPORTSPEC int S7API Cli_AsTM2Write(S7Object Client, int Start, int Amount, void *pUsrData);
+EXPORTSPEC int S7API Cli_AsCT2Read(S7Object Client, int Start, int Amount, void *pUsrData);
+EXPORTSPEC int S7API Cli_AsCT2Write(S7Object Client, int Start, int Amount, void *pUsrData);
 EXPORTSPEC int S7API Cli_AsListBlocksOfType(S7Object Client, int BlockType, TS7BlocksOfType *pUsrData, int &ItemsCount);
 EXPORTSPEC int S7API Cli_AsReadSZL(S7Object Client, int ID, int Index, TS7SZL *pUsrData, int &Size);
 EXPORTSPEC int S7API Cli_AsReadSZLList(S7Object Client, TS7SZLList *pUsrData, int &ItemsCount);

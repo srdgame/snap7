@@ -301,7 +301,7 @@ Type
   end;
   PS7CpInfo = ^TS7CpInfo;
 
-  // See §33.1 of "System Software for S7-300/400 System and Standard Functions"
+  // See ?33.1 of "System Software for S7-300/400 System and Standard Functions"
   // and see SFC51 description too
   SZL_HEADER = packed record
     LENTHDR : word;
@@ -323,7 +323,7 @@ Type
   end;
   PS7SZLList = ^TS7SZLList;
 
-  // See §33.19 of "System Software for S7-300/400 System and Standard Functions"
+  // See ?33.19 of "System Software for S7-300/400 System and Standard Functions"
   TS7Protection = packed record
     sch_schal : word;
     sch_par   : word;
@@ -405,6 +405,14 @@ function Cli_TMWrite(Client : S7Object; Start, Amount : integer; pUsrData : poin
 function Cli_CTRead(Client : S7Object; Start, Amount : integer; pUsrData : pointer) : integer;
 {$IFDEF MSWINDOWS}stdcall;{$ELSE}cdecl;{$ENDIF}
 function Cli_CTWrite(Client : S7Object; Start, Amount : integer; pUsrData : pointer) : integer;
+{$IFDEF MSWINDOWS}stdcall;{$ELSE}cdecl;{$ENDIF}
+function Cli_TM2Read(Client : S7Object; Start, Amount : integer; pUsrData : pointer) : integer;
+{$IFDEF MSWINDOWS}stdcall;{$ELSE}cdecl;{$ENDIF}
+function Cli_TM2Write(Client : S7Object; Start, Amount : integer; pUsrData : pointer) : integer;
+{$IFDEF MSWINDOWS}stdcall;{$ELSE}cdecl;{$ENDIF}
+function Cli_CT2Read(Client : S7Object; Start, Amount : integer; pUsrData : pointer) : integer;
+{$IFDEF MSWINDOWS}stdcall;{$ELSE}cdecl;{$ENDIF}
+function Cli_CT2Write(Client : S7Object; Start, Amount : integer; pUsrData : pointer) : integer;
 {$IFDEF MSWINDOWS}stdcall;{$ELSE}cdecl;{$ENDIF}
 // Directory functions
 function Cli_ListBlocks(Client : S7Object; pUsrData : PS7BlocksList) : integer;
@@ -494,6 +502,14 @@ function Cli_AsTMWrite(Client : S7Object; Start, Amount : integer; pUsrData : po
 function Cli_AsCTRead(Client : S7Object; Start, Amount : integer; pUsrData : pointer) : integer;
 {$IFDEF MSWINDOWS}stdcall;{$ELSE}cdecl;{$ENDIF}
 function Cli_AsCTWrite(Client : S7Object; Start, Amount : integer; pUsrData : pointer) : integer;
+{$IFDEF MSWINDOWS}stdcall;{$ELSE}cdecl;{$ENDIF}
+function Cli_AsTM2Read(Client : S7Object; Start, Amount : integer; pUsrData : pointer) : integer;
+{$IFDEF MSWINDOWS}stdcall;{$ELSE}cdecl;{$ENDIF}
+function Cli_AsTM2Write(Client : S7Object; Start, Amount : integer; pUsrData : pointer) : integer;
+{$IFDEF MSWINDOWS}stdcall;{$ELSE}cdecl;{$ENDIF}
+function Cli_AsCT2Read(Client : S7Object; Start, Amount : integer; pUsrData : pointer) : integer;
+{$IFDEF MSWINDOWS}stdcall;{$ELSE}cdecl;{$ENDIF}
+function Cli_AsCT2Write(Client : S7Object; Start, Amount : integer; pUsrData : pointer) : integer;
 {$IFDEF MSWINDOWS}stdcall;{$ELSE}cdecl;{$ENDIF}
 function Cli_AsListBlocksOfType(Client : S7Object; BlockType : integer; pUsrData : PS7BlocksOfType; var ItemsCount : integer) : integer;
 {$IFDEF MSWINDOWS}stdcall;{$ELSE}cdecl;{$ENDIF}
@@ -853,6 +869,10 @@ Type
     function TMWrite(Start, Amount : integer; pUsrData : pointer) : integer;
     function CTRead(Start, Amount : integer; pUsrData : pointer) : integer;
     function CTWrite(Start, Amount : integer; pUsrData : pointer) : integer;
+    function TM2Read(Start, Amount : integer; pUsrData : pointer) : integer;
+    function TM2Write(Start, Amount : integer; pUsrData : pointer) : integer;
+    function CT2Read(Start, Amount : integer; pUsrData : pointer) : integer;
+    function CT2Write(Start, Amount : integer; pUsrData : pointer) : integer;
     // Directory functions
     function ListBlocks(pUsrData : PS7BlocksList) : integer;
     function GetAgBlockInfo(BlockType, BlockNum : integer; pUsrData : PS7BlockInfo) : integer;
@@ -901,6 +921,10 @@ Type
     function AsTMWrite(Start, Amount : integer; pUsrData : pointer) : integer;
     function AsCTRead(Start, Amount : integer; pUsrData : pointer) : integer;
     function AsCTWrite(Start, Amount : integer; pUsrData : pointer) : integer;
+    function AsTM2Read(Start, Amount : integer; pUsrData : pointer) : integer;
+    function AsTM2Write(Start, Amount : integer; pUsrData : pointer) : integer;
+    function AsCT2Read(Start, Amount : integer; pUsrData : pointer) : integer;
+    function AsCT2Write(Start, Amount : integer; pUsrData : pointer) : integer;
     function AsListBlocksOfType(BlockType : integer; pUsrData : PS7BlocksOfType; var ItemsCount : integer) : integer;
     function AsReadSZL(ID, Index : integer; pUsrData : PS7SZL; var Size : integer) : integer;
     function AsReadSZLList(pUsrData : PS7SZLList; var ItemsCount : integer) : integer;
@@ -1136,6 +1160,10 @@ function Cli_TMRead;                  external snaplib name 'Cli_TMRead';
 function Cli_TMWrite;                 external snaplib name 'Cli_TMWrite';
 function Cli_CTRead;                  external snaplib name 'Cli_CTRead';
 function Cli_CTWrite;                 external snaplib name 'Cli_CTWrite';
+function Cli_TM2Read;                 external snaplib name 'Cli_TMR2ead';
+function Cli_TM2Write;                external snaplib name 'Cli_TM2Write';
+function Cli_CT2Read;                 external snaplib name 'Cli_CT2Read';
+function Cli_CT2Write;                external snaplib name 'Cli_CT2Write';
 function Cli_ListBlocks;              external snaplib name 'Cli_ListBlocks';
 function Cli_GetAgBlockInfo;          external snaplib name 'Cli_GetAgBlockInfo';
 function Cli_GetPgBlockInfo;          external snaplib name 'Cli_GetPgBlockInfo';
@@ -1180,6 +1208,10 @@ function Cli_AsTMRead;                external snaplib name 'Cli_AsTMRead';
 function Cli_AsTMWrite;               external snaplib name 'Cli_AsTMWrite';
 function Cli_AsCTRead;                external snaplib name 'Cli_AsCTRead';
 function Cli_AsCTWrite;               external snaplib name 'Cli_AsCTWrite';
+function Cli_AsTM2Read;               external snaplib name 'Cli_AsTM2Read';
+function Cli_AsTM2Write;              external snaplib name 'Cli_AsTM2Write';
+function Cli_AsCT2Read;               external snaplib name 'Cli_AsCT2Read';
+function Cli_AsCT2Write;              external snaplib name 'Cli_AsCT2Write';
 function Cli_AsListBlocksOfType;      external snaplib name 'Cli_AsListBlocksOfType';
 function Cli_AsReadSZL;               external snaplib name 'Cli_AsReadSZL';
 function Cli_AsReadSZLList;           external snaplib name 'Cli_AsReadSZLList';
@@ -1371,6 +1403,26 @@ end;
 function TS7Client.CTWrite(Start, Amount : integer; pUsrData : pointer) : integer;
 begin
   Result:=Cli_CTWrite(HC,Start,Amount,pUsrData)
+end;
+//------------------------------------------------------------------------------
+function TS7Client.TM2Read(Start, Amount : integer; pUsrData : pointer) : integer;
+begin
+  Result:=Cli_TM2Read(HC,Start,Amount,pUsrData)
+end;
+//------------------------------------------------------------------------------
+function TS7Client.TM2Write(Start, Amount : integer; pUsrData : pointer) : integer;
+begin
+  Result:=Cli_TM2Write(HC,Start,Amount,pUsrData)
+end;
+//------------------------------------------------------------------------------
+function TS7Client.CT2Read(Start, Amount : integer; pUsrData : pointer) : integer;
+begin
+  Result:=Cli_CT2Read(HC,Start,Amount,pUsrData)
+end;
+//------------------------------------------------------------------------------
+function TS7Client.CT2Write(Start, Amount : integer; pUsrData : pointer) : integer;
+begin
+  Result:=Cli_CT2Write(HC,Start,Amount,pUsrData)
 end;
 //------------------------------------------------------------------------------
 function TS7Client.ListBlocks(pUsrData : PS7BlocksList) : integer;
@@ -1612,6 +1664,26 @@ end;
 function TS7Client.AsCTWrite(Start, Amount : integer; pUsrData : pointer) : integer;
 begin
   Result:=Cli_AsCTWrite(HC,Start,Amount,pUsrData)
+end;
+//------------------------------------------------------------------------------
+function TS7Client.AsTM2Read(Start, Amount : integer; pUsrData : pointer) : integer;
+begin
+  Result:=Cli_AsTM2Read(HC,Start,Amount,pUsrData)
+end;
+//------------------------------------------------------------------------------
+function TS7Client.AsTM2Write(Start, Amount : integer; pUsrData : pointer) : integer;
+begin
+  Result:=Cli_AsTM2Write(HC,Start,Amount,pUsrData)
+end;
+//------------------------------------------------------------------------------
+function TS7Client.AsCT2Read(Start, Amount : integer; pUsrData : pointer) : integer;
+begin
+  Result:=Cli_AsCT2Read(HC,Start,Amount,pUsrData)
+end;
+//------------------------------------------------------------------------------
+function TS7Client.AsCT2Write(Start, Amount : integer; pUsrData : pointer) : integer;
+begin
+  Result:=Cli_AsCT2Write(HC,Start,Amount,pUsrData)
 end;
 //------------------------------------------------------------------------------
 function TS7Client.AsListBlocksOfType(BlockType : integer; pUsrData : PS7BlocksOfType; var ItemsCount : integer) : integer;

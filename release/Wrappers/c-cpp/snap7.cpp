@@ -158,6 +158,26 @@ int TS7Client::CTWrite(int Start, int Amount, void *pUsrData)
     return Cli_CTWrite(Client, Start, Amount, pUsrData);
 }
 //---------------------------------------------------------------------------
+int TS7Client::TM2Read(int Start, int Amount, void *pUsrData)
+{
+    return Cli_TM2Read(Client, Start, Amount, pUsrData);
+}
+//---------------------------------------------------------------------------
+int TS7Client::TMW2rite(int Start, int Amount, void *pUsrData)
+{
+    return Cli_TMW2rite(Client, Start, Amount, pUsrData);
+}
+//---------------------------------------------------------------------------
+int TS7Client::CT2Read(int Start, int Amount, void *pUsrData)
+{
+    return Cli_CT2Read(Client, Start, Amount, pUsrData);
+}
+//---------------------------------------------------------------------------
+int TS7Client::CT2Write(int Start, int Amount, void *pUsrData)
+{
+    return Cli_CT2Write(Client, Start, Amount, pUsrData);
+}
+//---------------------------------------------------------------------------
 int TS7Client::ListBlocks(PS7BlocksList pUsrData)
 {
     return Cli_ListBlocks(Client, pUsrData);
@@ -468,6 +488,26 @@ int TS7Client::AsCTRead(int Start, int Amount, void *pUsrData)
 int TS7Client::AsCTWrite(int Start, int Amount, void *pUsrData)
 {
     return Cli_AsCTWrite(Client, Start, Amount, pUsrData);
+}
+//---------------------------------------------------------------------------
+int TS7Client::AsTM2Read(int Start, int Amount, void *pUsrData)
+{
+    return Cli_AsTM2Read(Client, Start, Amount, pUsrData);
+}
+//---------------------------------------------------------------------------
+int TS7Client::AsTM2Write(int Start, int Amount, void *pUsrData)
+{
+    return Cli_AsTM2Write(Client, Start, Amount, pUsrData);
+}
+//---------------------------------------------------------------------------
+int TS7Client::AsCT2Read(int Start, int Amount, void *pUsrData)
+{
+    return Cli_AsCT2Read(Client, Start, Amount, pUsrData);
+}
+//---------------------------------------------------------------------------
+int TS7Client::AsCT2Write(int Start, int Amount, void *pUsrData)
+{
+    return Cli_AsCT2Write(Client, Start, Amount, pUsrData);
 }
 //---------------------------------------------------------------------------
 int TS7Client::AsDBGet(int DBNumber, void *pUsrData, int *Size)

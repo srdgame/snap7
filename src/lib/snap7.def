@@ -26,6 +26,10 @@ EXPORTS
   Cli_TMWrite
   Cli_CTRead
   Cli_CTWrite
+  Cli_TM2Read
+  Cli_TM2Write
+  Cli_CT2Read
+  Cli_CT2Write
   Cli_ListBlocks
   Cli_GetAgBlockInfo
   Cli_GetPgBlockInfo
@@ -71,6 +75,10 @@ EXPORTS
   Cli_AsTMWrite
   Cli_AsCTRead
   Cli_AsCTWrite
+  Cli_AsTM2Read
+  Cli_AsTM2Write
+  Cli_AsCT2Read
+  Cli_AsCT2Write
   Cli_AsListBlocksOfType
   Cli_AsReadSZL
   Cli_AsReadSZLList

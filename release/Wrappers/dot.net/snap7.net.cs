@@ -1222,6 +1222,34 @@ namespace Snap7
             return Cli_CTWrite(Client, Start, Amount, Buffer);
         }
 
+        [DllImport(S7Consts.Snap7LibName)]
+        protected static extern int Cli_TM2Read(IntPtr Client, int Start, int Amount, ushort[] Buffer);
+        public int TM2Read(int Start, int Amount, ushort[] Buffer)
+        {
+            return Cli_TM2Read(Client, Start, Amount, Buffer);
+        }
+
+        [DllImport(S7Consts.Snap7LibName)]
+        protected static extern int Cli_TM2Write(IntPtr Client, int Start, int Amount, ushort[] Buffer);
+        public int TM2Write(int Start, int Amount, ushort[] Buffer)
+        {
+            return Cli_TM2Write(Client, Start, Amount, Buffer);
+        }
+
+        [DllImport(S7Consts.Snap7LibName)]
+        protected static extern int Cli_CT2Read(IntPtr Client, int Start, int Amount, ushort[] Buffer);
+        public int CT2Read(int Start, int Amount, ushort[] Buffer)
+        {
+            return Cli_CT2Read(Client, Start, Amount, Buffer);
+        }
+
+        [DllImport(S7Consts.Snap7LibName)]
+        protected static extern int Cli_CTW2rite(IntPtr Client, int Start, int Amount, ushort[] Buffer);
+        public int CT2Write(int Start, int Amount, ushort[] Buffer)
+        {
+            return Cli_CT2Write(Client, Start, Amount, Buffer);
+        }
+
         #endregion
 
         #region [Directory functions]
@@ -1624,6 +1652,34 @@ namespace Snap7
         public int AsCTWrite(int Start, int Amount, ushort[] Buffer)
         {
             return Cli_AsCTWrite(Client, Start, Amount, Buffer);
+        }
+
+        [DllImport(S7Consts.Snap7LibName)]
+        protected static extern int Cli_AsTM2Read(IntPtr Client, int Start, int Amount, ushort[] Buffer);
+        public int AsTM2Read(int Start, int Amount, ushort[] Buffer)
+        {
+            return Cli_AsTM2Read(Client, Start, Amount, Buffer);
+        }
+
+        [DllImport(S7Consts.Snap7LibName)]
+        protected static extern int Cli_AsTM2Write(IntPtr Client, int Start, int Amount, ushort[] Buffer);
+        public int AsTM2Write(int Start, int Amount, ushort[] Buffer)
+        {
+            return Cli_AsTM2Write(Client, Start, Amount, Buffer);
+        }
+
+        [DllImport(S7Consts.Snap7LibName)]
+        protected static extern int Cli_AsCT2Read(IntPtr Client, int Start, int Amount, ushort[] Buffer);
+        public int AsCT2Read(int Start, int Amount, ushort[] Buffer)
+        {
+            return Cli_AsCT2Read(Client, Start, Amount, Buffer);
+        }
+
+        [DllImport(S7Consts.Snap7LibName)]
+        protected static extern int Cli_AsCT2Write(IntPtr Client, int Start, int Amount, ushort[] Buffer);
+        public int AsCT2Write(int Start, int Amount, ushort[] Buffer)
+        {
+            return Cli_AsCT2Write(Client, Start, Amount, Buffer);
         }
 
         [DllImport(S7Consts.Snap7LibName)]

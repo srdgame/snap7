@@ -31,6 +31,7 @@ TSnap7Peer::TSnap7Peer()
     PDUH_out=PS7ReqHeader(&PDU.Payload);
     PDURequest=480; // Our request, FPDULength will contain the CPU answer
     LastError=0;
+    cntword=0;
     Destroying = false;
 }
 //---------------------------------------------------------------------------

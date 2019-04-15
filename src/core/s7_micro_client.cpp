@@ -118,7 +118,7 @@ int TSnap7MicroClient::opReadArea()
           else
                ReqParams->Items[0].DBNumber = 0x0000;
           // Adjusts the offset
-          if ((Job.WordLen==S7WLBit) || (Job.WordLen==S7WLCounter) || (Job.WordLen==S7WLTimer))
+          if ((Job.WordLen==S7WLBit) || (Job.WordLen==S7WLCounter) || (Job.WordLen==S7WLTimer) || (Job.WordLen==S7WLCounter2) || (Job.WordLen==S7WLTimer2))
                Address = Start;
           else
                Address = Start*8;
@@ -235,7 +235,7 @@ int TSnap7MicroClient::opWriteArea()
                ReqParams->Items[0].DBNumber=0x0000;
 
            // Adjusts the offset
-           if ((Job.WordLen==S7WLBit) || (Job.WordLen==S7WLCounter) || (Job.WordLen==S7WLTimer))
+           if ((Job.WordLen==S7WLBit) || (Job.WordLen==S7WLCounter) || (Job.WordLen==S7WLTimer) || (Job.WordLen==S7WLCounter2) || (Job.WordLen==S7WLTimer2))
                Address=Start;
            else
                Address=Start*8;
@@ -263,6 +263,8 @@ int TSnap7MicroClient::opWriteArea()
                case S7WLChar   :
                case S7WLCounter:
                case S7WLTimer:
+               case S7WLCounter2:
+               case S7WLTimer2:
                    ReqData->TransportSize=TS_ResOctet;
 				   break;
 			   default:
@@ -336,6 +338,10 @@ int TSnap7MicroClient::opReadMultiVars()
           Item->WordLen=S7WLCounter;
         if (Item->Area==S7AreaTM)
           Item->WordLen=S7WLTimer;
+        if (Item->Area==S7AreaCT2)
+          Item->WordLen=S7WLCounter2;
+        if (Item->Area==S7AreaTM2)
+          Item->WordLen=S7WLTimer2;
         Item++;
     };
 
@@ -372,7 +378,7 @@ int TSnap7MicroClient::opReadMultiVars()
         else
     	    ReqParams->Items[c].DBNumber=0x0000;
         // Adjusts the offset
-        if ((Item->WordLen==S7WLBit) || (Item->WordLen==S7WLCounter) || (Item->WordLen==S7WLTimer))
+        if ((Item->WordLen==S7WLBit) || (Item->WordLen==S7WLCounter) || (Item->WordLen==S7WLTimer) || (Item->WordLen==S7WLCounter2) || (Item->WordLen==S7WLTimer2))
         	Address=Item->Start;
         else
         	Address=Item->Start*8;
@@ -461,6 +467,10 @@ int TSnap7MicroClient::opWriteMultiVars()
           Item->WordLen=S7WLCounter;
         if (Item->Area==S7AreaTM)
           Item->WordLen=S7WLTimer;
+        if (Item->Area==S7AreaCT2)
+          Item->WordLen=S7WLCounter2;
+        if (Item->Area==S7AreaTM2)
+          Item->WordLen=S7WLTimer2;
         Item++;
     };
 
@@ -501,7 +511,7 @@ int TSnap7MicroClient::opWriteMultiVars()
             ReqParams->Items[c].DBNumber=0x0000;
 
         // Adjusts the offset
-        if ((Item->WordLen==S7WLBit) || (Item->WordLen==S7WLCounter) || (Item->WordLen==S7WLTimer))
+        if ((Item->WordLen==S7WLBit) || (Item->WordLen==S7WLCounter) || (Item->WordLen==S7WLTimer) || (Item->WordLen==S7WLCounter2) || (Item->WordLen==S7WLTimer2))
         	Address=Item->Start;
         else
         	Address=Item->Start*8;
@@ -530,7 +540,10 @@ int TSnap7MicroClient::opWriteMultiVars()
                break;
           case S7WLChar    :
           case S7WLCounter :
-          case S7WLTimer   : ReqData[c]->TransportSize=TS_ResOctet;
+          case S7WLTimer   :
+          case S7WLCounter2:
+          case S7WLTimer2  :
+               ReqData[c]->TransportSize=TS_ResOctet;
 			   break;
 		  default :
 			   ReqData[c]->TransportSize=TS_ResByte; // byte/word/dword etc.
@@ -2481,6 +2494,8 @@ int TSnap7MicroClient::DataSizeByte(int WordLength)
 		case S7WLReal    : return 4;
 		case S7WLCounter : return 2;
 		case S7WLTimer   : return 2;
+		case S7WLCounter2: return 3;
+		case S7WLTimer2  : return 5;
 		default          : return 0;
      }
 }
@@ -2884,6 +2899,26 @@ int TSnap7MicroClient::CTRead(int Start, int Amount,  void * pUsrData)
 int TSnap7MicroClient::CTWrite(int Start, int Amount,  void * pUsrData)
 {
     return WriteArea(S7AreaCT, 0, Start, Amount, S7WLCounter, pUsrData);
+}
+//---------------------------------------------------------------------------
+int TSnap7MicroClient::TM2Read(int Start, int Amount,  void * pUsrData)
+{
+    return ReadArea(S7AreaTM2, 0, Start, Amount, S7WLTimer2, pUsrData);
+}
+//---------------------------------------------------------------------------
+int TSnap7MicroClient::TM2Write(int Start, int Amount,  void * pUsrData)
+{
+    return WriteArea(S7AreaTM2, 0, Start, Amount, S7WLTimer2, pUsrData);
+}
+//---------------------------------------------------------------------------
+int TSnap7MicroClient::CT2Read(int Start, int Amount,  void * pUsrData)
+{
+    return ReadArea(S7AreaCT2, 0, Start, Amount, S7WLCounter2, pUsrData);
+}
+//---------------------------------------------------------------------------
+int TSnap7MicroClient::CT2Write(int Start, int Amount,  void * pUsrData)
+{
+    return WriteArea(S7AreaCT2, 0, Start, Amount, S7WLCounter2, pUsrData);
 }
 //---------------------------------------------------------------------------
 int TSnap7MicroClient::ListBlocks(PS7BlocksList pUsrData)

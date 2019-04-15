@@ -320,6 +320,10 @@ public:
     int TMWrite(int Start, int Amount, void * pUsrData);
     int CTRead(int Start, int Amount, void * pUsrData);
     int CTWrite(int Start, int Amount, void * pUsrData);
+    int TM2Read(int Start, int Amount, void * pUsrData);
+    int TM2Write(int Start, int Amount, void * pUsrData);
+    int CT2Read(int Start, int Amount, void * pUsrData);
+    int CT2Write(int Start, int Amount, void * pUsrData);
     // Directory functions
     int ListBlocks(PS7BlocksList pUsrData);
     int GetAgBlockInfo(int BlockType, int BlockNum, PS7BlockInfo pUsrData);

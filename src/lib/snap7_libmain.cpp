@@ -280,6 +280,38 @@ int S7API Cli_CTWrite(S7Object Client, int Start, int Amount, void *pUsrData)
         return errLibInvalidObject;
 }
 //---------------------------------------------------------------------------
+int S7API Cli_TM2Read(S7Object Client, int Start, int Amount, void *pUsrData)
+{
+    if (Client)
+        return PSnap7Client(Client)->TM2Read(Start, Amount, pUsrData);
+    else
+        return errLibInvalidObject;
+}
+//---------------------------------------------------------------------------
+int S7API Cli_TM2Write(S7Object Client, int Start, int Amount, void *pUsrData)
+{
+    if (Client)
+        return PSnap7Client(Client)->TM2Write(Start, Amount, pUsrData);
+    else
+        return errLibInvalidObject;
+}
+//---------------------------------------------------------------------------
+int S7API Cli_CT2Read(S7Object Client, int Start, int Amount, void *pUsrData)
+{
+    if (Client)
+         return PSnap7Client(Client)->CT2Read(Start, Amount, pUsrData);
+    else
+        return errLibInvalidObject;
+}
+//---------------------------------------------------------------------------
+int S7API Cli_CT2Write(S7Object Client, int Start, int Amount, void *pUsrData)
+{
+    if (Client)
+        return PSnap7Client(Client)->CT2Write(Start, Amount, pUsrData);
+    else
+        return errLibInvalidObject;
+}
+//---------------------------------------------------------------------------
 int S7API Cli_ListBlocks(S7Object Client, TS7BlocksList *pUsrData)
 {
     if (Client)
@@ -670,6 +702,38 @@ int S7API Cli_AsCTWrite(S7Object Client, int Start, int Amount, void *pUsrData)
 {
 	if (Client)
         return PSnap7Client(Client)->AsCTWrite(Start, Amount, pUsrData);
+    else
+        return errLibInvalidObject;
+}
+//---------------------------------------------------------------------------
+int S7API Cli_AsTM2Read(S7Object Client, int Start, int Amount, void *pUsrData)
+{
+    if (Client)
+        return PSnap7Client(Client)->AsTM2Read(Start, Amount, pUsrData);
+    else
+        return errLibInvalidObject;
+}
+//---------------------------------------------------------------------------
+int S7API Cli_AsTM2Write(S7Object Client, int Start, int Amount, void *pUsrData)
+{
+    if (Client)
+        return PSnap7Client(Client)->AsTM2Write(Start, Amount, pUsrData);
+    else
+        return errLibInvalidObject;
+}
+//---------------------------------------------------------------------------
+int S7API Cli_AsCT2Read(S7Object Client, int Start, int Amount, void *pUsrData)
+{
+    if (Client)
+        return PSnap7Client(Client)->AsCT2Read(Start, Amount, pUsrData);
+	else
+        return errLibInvalidObject;
+}
+//---------------------------------------------------------------------------
+int S7API Cli_AsCT2Write(S7Object Client, int Start, int Amount, void *pUsrData)
+{
+	if (Client)
+        return PSnap7Client(Client)->AsCT2Write(Start, Amount, pUsrData);
     else
         return errLibInvalidObject;
 }

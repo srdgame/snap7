@@ -45,6 +45,8 @@ const byte S7AreaMK   =	0x83;
 const byte S7AreaDB   =	0x84;
 const byte S7AreaCT   =	0x1C;
 const byte S7AreaTM   =	0x1D;
+const byte S7AreaCT2  =	0x1E;
+const byte S7AreaTM2  =	0x1F;
 
 const int MaxVars     = 20;
 
@@ -58,6 +60,8 @@ const int S7WLDInt    = 0x07;
 const int S7WLReal    = 0x08;
 const int S7WLCounter = 0x1C;
 const int S7WLTimer   = 0x1D;
+const int S7WLCounter2= 0x1E;
+const int S7WLTimer2  = 0x1F;
 
   // Block type
 const byte Block_OB   = 0x38;

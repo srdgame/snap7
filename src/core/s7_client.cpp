@@ -413,6 +413,26 @@ int TSnap7Client::AsCTWrite(int Start, int Amount, void * pUsrData)
     return AsWriteArea(S7AreaCT, 0, Start, Amount, S7WLCounter, pUsrData);
 }
 //---------------------------------------------------------------------------
+int TSnap7Client::AsTM2Read(int Start, int Amount, void * pUsrData)
+{
+    return AsReadArea(S7AreaTM2, 0, Start, Amount, S7WLTimer2, pUsrData);
+}
+//---------------------------------------------------------------------------
+int TSnap7Client::AsTM2Write(int Start, int Amount, void * pUsrData)
+{
+    return AsWriteArea(S7AreaTM2, 0, Start, Amount, S7WLTimer2, pUsrData);
+}
+//---------------------------------------------------------------------------
+int TSnap7Client::AsCT2Read(int Start, int Amount, void * pUsrData)
+{
+    return AsReadArea(S7AreaCT2, 0, Start, Amount, S7WLCounter2, pUsrData);
+}
+//---------------------------------------------------------------------------
+int TSnap7Client::AsCT2Write(int Start, int Amount, void * pUsrData)
+{
+    return AsWriteArea(S7AreaCT2, 0, Start, Amount, S7WLCounter2, pUsrData);
+}
+//---------------------------------------------------------------------------
 int TSnap7Client::AsDBGet(int DBNumber, void * pUsrData, int &Size)
 {
     if (!Job.Pending)
