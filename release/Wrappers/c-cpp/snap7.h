@@ -295,6 +295,8 @@ const int S7WLDWord   = 0x06;
 const int S7WLReal    = 0x08;
 const int S7WLCounter = 0x1C;
 const int S7WLTimer   = 0x1D;
+const int S7WLCounter2= 0x1E;
+const int S7WLTimer2  = 0x1F;
 
 // Block type
 const byte Block_OB   = 0x38;
