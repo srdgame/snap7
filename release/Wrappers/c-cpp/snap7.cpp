@@ -163,9 +163,9 @@ int TS7Client::TM2Read(int Start, int Amount, void *pUsrData)
     return Cli_TM2Read(Client, Start, Amount, pUsrData);
 }
 //---------------------------------------------------------------------------
-int TS7Client::TMW2rite(int Start, int Amount, void *pUsrData)
+int TS7Client::TM2Write(int Start, int Amount, void *pUsrData)
 {
-    return Cli_TMW2rite(Client, Start, Amount, pUsrData);
+    return Cli_TM2Write(Client, Start, Amount, pUsrData);
 }
 //---------------------------------------------------------------------------
 int TS7Client::CT2Read(int Start, int Amount, void *pUsrData)
